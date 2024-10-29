@@ -29,6 +29,22 @@
     
     php artisan serve
 
+9. Login credentials
+
+    Admin:
+    Email: admin@gmail.com
+    Password: 123
+
+    Employees:
+    Email: kamran@gmail.com
+    Password: 123
+
+    Email: farhan1@gmail.com
+    Password: 123
+
+    Email: wajid@gmail.com
+    Password: 123
+
 
 
 
