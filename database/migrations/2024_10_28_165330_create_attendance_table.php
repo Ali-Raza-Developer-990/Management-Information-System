@@ -11,12 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('attendances', function (Blueprint $table) {
+        Schema::create('checkin_checkout', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->nullable()->constrained()->onDelete('cascade'); 
-            $table->dateTime('checkin_time')->nullable()->default(DB::raw('CURRENT_TIMESTAMP')); 
-            $table->dateTime('checkout_time')->nullable(); 
-            $table->timestamps(); 
+            $table->unsignedBigInteger('user_id');
+            $table->timestamp('checkin_time');
+            $table->timestamp('checkout_time')->nullable();
+            $table->timestamps();
+
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 

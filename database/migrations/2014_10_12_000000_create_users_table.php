@@ -15,10 +15,14 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('email')->unique();
+            $table->string('password');
             $table->string('age');
+            $table->string('contact')->nullable();
+            $table->string('designation')->nullable();
             $table->string('city');
-            $table->rememberToken();
-            $table->timestamps();
+            $table->enum('roles', ['Admin', 'Employee'])->nullable();
+            $table->string('remember_token')->nullable();
+            $table->timestamps(); 
         });
     }
 
